@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Real-Time Chat Application
+
+This is a full-stack real-time chat application built with the latest web technologies. It allows users to sign in with their Google account, add friends, and chat with them in real-time.
+
+## Features
+
+- **User Authentication:** Secure user authentication with NextAuth.js and Google Provider.
+- **Real-Time Messaging:** Instant messaging with Pusher and WebSockets.
+- **Friend System:** Users can send, accept, and deny friend requests.
+- **Real-Time Notifications:** Users receive real-time notifications for new friend requests and messages.
+- **Modern UI:** A beautiful and responsive user interface built with Tailwind CSS and shadcn/ui.
+- **Database:** Redis database with Upstash for storing user data, friends, and chat messages.
+- **TypeScript:** Fully typed codebase for better developer experience and fewer bugs.
+
+## Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/) 15
+- **Authentication:** [NextAuth.js](https://next-auth.js.org/)
+- **Database:** [Upstash Redis](https://upstash.com/)
+- **Real-Time:** [Pusher](https://pusher.com/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components:** [shadcn/ui](https://ui.shadcn.com/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Validation:** [Zod](https://zod.dev/)
+- **Forms:** [React Hook Form](https://react-hook-form.com/)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Node.js](https://nodejs.org/en/) (v20 or higher)
+- [pnpm](https://pnpm.io/) (or npm/yarn)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone the repository:**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone https://github.com/AhmedFaridMostafa/realtime-chat.git
+   cd realtime-chat
+   ```
 
-## Learn More
+2. **Install dependencies:**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   pnpm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Set up environment variables:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   Create a `.env.local` file in the root of the project and add the following environment variables:
 
-## Deploy on Vercel
+   ```
+   # NextAuth
+   AUTH_SECRET=
+   AUTH_URL=http://localhost:3000
+   GOOGLE_CLIENT_ID=
+   GOOGLE_CLIENT_SECRET=
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   # Upstash Redis
+   UPSTASH_REDIS_REST_URL=
+   UPSTASH_REDIS_REST_TOKEN=
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   # Pusher
+   NEXT_PUBLIC_PUSHER_APP_KEY=
+   PUSHER_APP_ID=
+   PUSHER_APP_SECRET=
+   ```
+
+4. **Run the development server:**
+
+   ```bash
+   pnpm dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Available Scripts
+
+- `dev`: Runs the development server with Turbopack.
+- `build`: Creates a production build of the application.
+- `start`: Starts the production server.
+- `lint`: Lints the codebase with ESLint.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
