@@ -115,11 +115,32 @@
   --sidebar-ring: oklch(0.552 0.016 285.938);
 }
 
+@layer utilities {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--container-max-width-2xl);
+    padding-left: var(--container-padding-x);
+    padding-right: var(--container-padding-x);
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
